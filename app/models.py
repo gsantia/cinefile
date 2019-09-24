@@ -40,6 +40,11 @@ class User(UserMixin, db.Model):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return 'https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
                     digest, size)
+# Handle followers
+followers = db.Table('followers',
+    db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
+    db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
+    )
 
 class Review(db.Model):
     """
