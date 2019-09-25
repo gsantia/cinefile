@@ -5,16 +5,33 @@ from werkzeug.urls import url_parse
 from app import app
 from app import db
 from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import ReviewForm
 from flask_login import current_user, login_user, logout_user
 from flask_login import login_required
-from app.models import User
+from app.models import User, Review
 
 # Landing page
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods = ['GET', 'POST'])
+@app.route('/index', methods = ['GET', 'POST'])
 @login_required
 def index():
-    return render_template('index.html', title = 'Home')
+    #TODO: this doesn't really go here, put it here for now.
+    form = ReviewForm()
+    if form.validate_on_submit():
+        review = Review(body = form.review.data, author = current_user)
+        db.session.add(review)
+        db.session.commit()
+        flash('Your review is now live!')
+        return redirect(url_for('index'))
+    reviews = current_user.followed_reviews().all()
+    return render_template('index.html', title = 'Home Page', form = form, reviews = reviews)
+
+# Explore page to find users
+@app.route('/explore')
+@login_required
+def explore():
+    reviews = Review.query.order_by(Review.timestamp.desc()).all()
+    return render_template('index.html', title = 'Explore', reviews = reviews)
 
 # Login
 @app.route('/login', methods = ['GET', 'POST'])
@@ -60,11 +77,8 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username = username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
-    return render_template('user.html', user = user, posts = posts)
+    reviews = user.reviews.all()
+    return render_template('user.html', user = user, reviews = reviews)
 
 # Edit profile
 @app.route('/edit_profile', methods = ['GET', 'POST'])

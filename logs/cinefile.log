@@ -37,3 +37,6 @@ Traceback (most recent call last):
     if username.data != self.original_username:
 AttributeError: 'EditProfileForm' object has no attribute 'original_username'
 2019-09-24 17:12:54,502 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-24 19:53:46,433 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-24 19:59:09,402 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-24 20:00:37,970 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
