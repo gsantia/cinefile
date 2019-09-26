@@ -23,15 +23,29 @@ def index():
         db.session.commit()
         flash('Your review is now live!')
         return redirect(url_for('index'))
-    reviews = current_user.followed_reviews().all()
-    return render_template('index.html', title = 'Home Page', form = form, reviews = reviews)
+    page = request.args.get('page', 1, type = int)
+    reviews = current_user.followed_reviews().paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('index', page = reviews.next_num) \
+        if reviews.has_next else None
+    prev_url = url_for('index', page = reviews.prev_num) \
+        if reviews.has_prev else None
+    return render_template('index.html', title = 'Home', form = form,
+        reviews = reviews.items, next_url = next_url, prev_url = prev_url)
 
 # Explore page to find users
 @app.route('/explore')
 @login_required
 def explore():
-    reviews = Review.query.order_by(Review.timestamp.desc()).all()
-    return render_template('index.html', title = 'Explore', reviews = reviews)
+    page = request.args.get('page', 1, type = int)
+    reviews = Review.query.order_by(Review.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('explore', page = reviews.next_num) \
+        if reviews.has_next else None
+    prev_url = url_for('explore', page = reviews.prev_num) \
+        if reviews.has_prev else None
+    return render_template('index.html', title = 'Explore', reviews = reviews.items,
+        next_url = next_url, prev_url = prev_url)
 
 # Login
 @app.route('/login', methods = ['GET', 'POST'])
@@ -77,8 +91,15 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username = username).first_or_404()
-    reviews = user.reviews.all()
-    return render_template('user.html', user = user, reviews = reviews)
+    page = request.args.get('page', 1, type = int)
+    reviews = user.reviews.order_by(Review.timestamp.desc()).paginate(
+        page, app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('user', username = user.username, page = reviews.next_num) \
+        if reviews.has_next else None
+    prev_url = url_for('user', username = user.username, page = reviews.pre_num) \
+        if reviews.has_prev else None
+    return render_template('user.html', user = user, reviews = reviews.items,
+        next_url = next_url, prev_url = prev_url)
 
 # Edit profile
 @app.route('/edit_profile', methods = ['GET', 'POST'])

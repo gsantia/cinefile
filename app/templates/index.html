@@ -18,4 +18,10 @@
     {% for review in reviews %}
         {% include '_review.html' %}
     {% endfor %}
+    {% if prev_url %}
+        <a href="{{ prev_url }}">Newer reviews</a>
+    {% endif %}
+    {% if next_url %}
+        <a href="{{ next_url }}">Older reviews</a>
+    {% endif %}
 {% endblock %}
