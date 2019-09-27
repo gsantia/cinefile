@@ -40,3 +40,7 @@ AttributeError: 'EditProfileForm' object has no attribute 'original_username'
 2019-09-24 19:53:46,433 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
 2019-09-24 19:59:09,402 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
 2019-09-24 20:00:37,970 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-26 20:55:21,799 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-26 20:57:50,457 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:34]
+2019-09-26 22:03:24,787 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:53]
+2019-09-26 22:06:20,300 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:53]
