@@ -1,0 +1,133 @@
+2019-09-30 01:22:03,558 ERROR: Exception on /index.html [GET] [in /home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1925, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1907, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/werkzeug/routing.py", line 1799, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1815, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1743, in handle_http_exception
+    return handler(e)
+  File "/home/gio/Projects/cinefile/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/gio/Projects/cinefile/app/templates/base.html", line 28, in template
+    <li><a href="{{ url_for('user', username = current_user.username }}">Profile</a></li>
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/gio/Projects/cinefile/app/templates/404.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/gio/Projects/cinefile/app/templates/base.html", line 28, in template
+    <li><a href="{{ url_for('user', username = current_user.username }}">Profile</a></li>
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 223, in parse_if
+    drop_needle=True)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 672, in parse_postfix
+    node = self.parse_subscript(node)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/parser.py", line 700, in parse_subscript
+    next(self.stream)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-09-30 01:22:31,438 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:55]

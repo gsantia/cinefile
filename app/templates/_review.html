@@ -1,11 +1,17 @@
-<table>
-    <tr valign="top">
-        <td><img src="{{ review.author.avatar(36) }}"></td>
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username = review.author.username) }}">
+                <img src="{{ review.author.avatar(70) }}" />
+            </a>
+        </td>
         <td>
             <a href="{{ url_for('user', username = review.author.username) }}">
                 {{ review.author.username }}
             </a>
-            says:<br>{{ review.body }}
+            says:
+            <br>
+            {{ review.body }}
         </td>
     </tr>
 </table>
