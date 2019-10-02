@@ -97,7 +97,7 @@ def user(username):
         page, app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('user', username = user.username, page = reviews.next_num) \
         if reviews.has_next else None
-    prev_url = url_for('user', username = user.username, page = reviews.pre_num) \
+    prev_url = url_for('user', username = user.username, page = reviews.prev_num) \
         if reviews.has_prev else None
     return render_template('user.html', user = user, reviews = reviews.items,
         next_url = next_url, prev_url = prev_url)

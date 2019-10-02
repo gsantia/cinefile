@@ -9,7 +9,7 @@
             <a href="{{ url_for('user', username = review.author.username) }}">
                 {{ review.author.username }}
             </a>
-            says:
+            said {{ moment(review.timestamp).fromNow() }}:
             <br>
             {{ review.body }}
         </td>
