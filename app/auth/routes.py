@@ -3,8 +3,8 @@ from datetime import datetime
 from werkzeug.urls import url_parse
 from app import db
 from app.auth import bp
-from app.auth.forms import LoginForm, RegistrationForm, EditProfileForm
-from app.auth.forms import ReviewForm, ResetPasswordRequestForm, ResetPasswordForm
+from app.auth.forms import LoginForm, RegistrationForm
+from app.auth.forms import ResetPasswordRequestForm, ResetPasswordForm
 from app.auth.email import send_password_reset_email
 from flask_login import current_user, login_user, logout_user
 from app.models import User
