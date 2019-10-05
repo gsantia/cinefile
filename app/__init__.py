@@ -23,7 +23,6 @@ login.login_view = 'auth.login'
 login.login_message = 'Please log in to access the page.'
 bootstrap = Bootstrap()
 moment = Moment()
-login.login_view = 'login'
 
 def create_app(config_class = Config):
     app = Flask(__name__)
