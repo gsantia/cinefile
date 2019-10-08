@@ -47,3 +47,7 @@ jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', 
 2019-10-05 00:30:55,257 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
 2019-10-05 00:34:45,012 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
 2019-10-05 00:34:47,085 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-07 16:16:54,195 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-07 23:17:34,884 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-07 23:17:40,805 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-08 01:31:30,885 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]

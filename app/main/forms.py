@@ -23,3 +23,7 @@ class EditProfileForm(FlaskForm):
 class ReviewForm(FlaskForm):
     review = TextAreaField('Review the film:', validators = [DataRequired()])
     submit = SubmitField('Submit')
+
+class MessageForm(FlaskForm):
+    message = TextAreaField('Message', validators = [DataRequired()])
+    submit = SubmitField('Submit')

@@ -2,9 +2,9 @@ from flask import render_template, flash, redirect, url_for, request
 from flask import current_app
 from datetime import datetime
 from app import db
-from app.main.forms import EditProfileForm, ReviewForm
+from app.main.forms import EditProfileForm, ReviewForm, MessageForm
 from flask_login import current_user, login_required
-from app.models import User, Review
+from app.models import User, Review, Message
 from app.main import bp
 
 
@@ -121,3 +121,29 @@ def unfollow(username):
 def user_popup(username):
     user = User.query.filter_by(username = username).first_or_404()
     return render_template('user_popup.html', user = user)
+
+@bp.route('/send_message/<recipient>', methods = ['GET', 'POST'])
+@login_required
+def send_message(recipient):
+    user = User.query.filter_by(username = recipient).first_or_404()
+    form = MessageForm()
+    if form.validate_on_submit():
+        msg = Message(author = current_user, recipient = user,
+                      body = form.message.data)
+        db.session.add(msg)
+        db.session.commit()
+        flash('Your message has been sent.')
+        return redirect(url_for('main.user', username = recipient))
+    return render_template('send_message.html', title = 'Send Message',
+                           form = form, recipient = recipient)
+
+@bp.route('/messages')
+@login_required
+def messages():
+    current_user.last_message_read_time = datetime.utcnow()
+    db.session.commit()
+    page = request.args.get('page', 1, type = int)
+    messages = current_user.messages_received.order_by(
+        Message.timestamp.desc()).paginate(
+            page, current_app.config['POSTS_PER_PAGE'], False)
+
