@@ -20,5 +20,6 @@ class Config(object):
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['gs495@drexel.edu']
 
+    REDIS_URL = os.environ.get('REDIS_URL') or 'redis://'
 
     POSTS_PER_PAGE = 10

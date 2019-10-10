@@ -1,26 +1,4 @@
-2019-09-30 01:23:03,613 ERROR: Exception on /user/g [GET] [in /home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 2446, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1951, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1820, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask/app.py", line 1935, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/gio/Projects/cinefile/venv/lib/python3.5/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/gio/Projects/cinefile/app/routes.py", line 101, in user
-    if reviews.has_prev else None
-AttributeError: 'Pagination' object has no attribute 'pre_num'
-2019-09-30 01:38:16,608 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:55]
-2019-09-30 01:39:09,344 INFO: Cinefile startup [in /home/gio/Projects/cinefile/app/__init__.py:55]
-2019-10-01 20:58:46,048 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:55]
-2019-10-01 20:59:49,501 ERROR: Exception on /user/g [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2019-10-08 17:10:37,820 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -36,10 +14,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/gs495/Projects/cinefile/app/routes.py", line 101, in user
-    if reviews.has_prev else None
-AttributeError: 'Pagination' object has no attribute 'pre_num'
-2019-10-01 21:00:17,415 ERROR: Exception on /user/g [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:10:41,399 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -55,11 +33,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/gs495/Projects/cinefile/app/routes.py", line 101, in user
-    if reviews.has_prev else None
-AttributeError: 'Pagination' object has no attribute 'pre_num'
-2019-10-01 21:18:11,164 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:55]
-2019-10-01 21:18:17,528 ERROR: Exception on /user/g [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:10:43,795 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -75,13 +52,10 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/gs495/Projects/cinefile/app/routes.py", line 101, in user
-    if reviews.has_prev else None
-AttributeError: 'Pagination' object has no attribute 'pre_num'
-2019-10-01 21:18:59,836 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:55]
-2019-10-01 21:42:56,097 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:57]
-2019-10-03 01:26:30,730 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:78]
-2019-10-03 01:26:36,398 ERROR: Exception on /user/gio [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:10:47,929 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -97,7 +71,63 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 60, in user
-    page = request.args.get('page', 1, type = int)
-NameError: name 'request' is not defined
-2019-10-03 01:27:18,744 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:78]
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:10:51,400 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:10:57,067 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:01,400 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined

@@ -1,4 +1,4 @@
-2019-10-03 16:41:58,840 ERROR: Exception on /index [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2019-10-08 17:11:07,998 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,27 +12,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
-    base = expand_login_view(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
-    return url_for(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2019-10-03 16:47:13,274 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:78]
-2019-10-03 16:47:16,823 ERROR: Exception on /index [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:11,401 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -46,26 +31,12 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
-    base = expand_login_view(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
-    return url_for(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
-2019-10-03 16:47:19,193 ERROR: Exception on /index [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:17,745 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -79,22 +50,84 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
-    return current_app.login_manager.unauthorized()
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
-    redirect_url = make_login_url(login_view, next_url=request.url)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
-    base = expand_login_view(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
-    return url_for(login_view)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:21,407 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
     raise value
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:27,069 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:31,408 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined
+2019-10-08 17:11:34,121 ERROR: Exception on /notifications [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/gs495/Projects/cinefile/app/main/routes.py", line 165, in notifications
+    return jsonify([{
+NameError: name 'jsonify' is not defined

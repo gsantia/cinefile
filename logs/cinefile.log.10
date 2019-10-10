@@ -1,0 +1,100 @@
+2019-10-03 16:47:37,706 ERROR: Exception on / [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
+    base = expand_login_view(login_view)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
+    return url_for(login_view)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2019-10-03 16:51:01,431 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:78]
+2019-10-03 16:51:04,220 ERROR: Exception on / [GET] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 260, in decorated_view
+    return current_app.login_manager.unauthorized()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 175, in unauthorized
+    redirect_url = make_login_url(login_view, next_url=request.url)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 112, in login_url
+    base = expand_login_view(login_view)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask_login/utils.py", line 89, in expand_login_view
+    return url_for(login_view)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'login'. Did you mean 'auth.login' instead?
+2019-10-03 16:52:36,482 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-03 16:52:39,681 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-03 16:52:44,688 ERROR: Exception on /auth/login [POST] [in /Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/gs495/Projects/cinefile/app/auth/routes.py", line 27, in login
+    return redirect(url_for('index'))
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/app.py", line 2215, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/flask/helpers.py", line 358, in url_for
+    endpoint, values, method=method, force_external=external
+  File "/Users/gs495/Projects/cinefile/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 2020, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+2019-10-03 16:54:21,631 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-03 17:54:21,237 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-04 18:20:25,872 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
+2019-10-04 23:23:01,663 INFO: Cinefile startup [in /Users/gs495/Projects/cinefile/app/__init__.py:77]
