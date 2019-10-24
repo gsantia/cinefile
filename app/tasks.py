@@ -21,7 +21,7 @@ def _set_task_progress(progress):
             task.complete = True
         db.session.commit()
 
-def export_posts(user_id):
+def export_reviews(user_id):
     try:
         user = User.query.get(user_id)
         _set_task_progress(0)
@@ -33,7 +33,7 @@ def export_posts(user_id):
                          'timestamp': review.timestamp.isoformat() + 'Z'})
             time.sleep(5)
             i += 1
-            _set_task_progress(100 * i // total_posts)
+            _set_task_progress(100 * i // total_reviews)
     except:
         _set_task_progress(100)
         app.logger.error('Unhandled exception', exc_info = sys.exc_info())

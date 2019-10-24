@@ -167,3 +167,14 @@ def notifications():
         'data': n.get_data(),
         'timestamp': n.timestamp
     } for n in notifications])
+
+
+@bp.route('/export_reviews')
+@login_required
+def export_reviews():
+    if current_user.get_task_in_progress('export_reviews'):
+        flash('An export task is already in progress.')
+    else:
+        current_user.launch_task('export_reviews', 'Exporting reviews...')
+        db.session.commit()
+    return redirect(url_for('main.user', username = current_user.username))
