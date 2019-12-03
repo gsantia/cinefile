@@ -1,6 +1,8 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask import current_app, jsonify
 from datetime import datetime
+import requests
+import os
 from app import db
 from app.main.forms import EditProfileForm, ReviewForm, MessageForm
 from flask_login import current_user, login_required
@@ -65,7 +67,7 @@ def user(username):
     prev_url = url_for('main.user', username = user.username, page = reviews.prev_num) \
         if reviews.has_prev else None
     return render_template('user.html', user = user, reviews = reviews.items,
-        next_url = next_url, prev_url = prev_url)
+        next_url = next_url, prev_url = prev_url, title = "{}'s profile".format(username))
 
 
 @bp.route('/edit_profile', methods = ['GET', 'POST'])
@@ -121,6 +123,30 @@ def unfollow(username):
 def user_popup(username):
     user = User.query.filter_by(username = username).first_or_404()
     return render_template('user_popup.html', user = user)
+
+@bp.route('/film')
+@login_required
+def film_page():
+    # Grab the film data from the API here. Do Fight Club for now
+    api_key = os.environ.get('API_KEY')
+    response = requests.get('https://api.themoviedb.org/3/movie/550?api_key={}&append_to_response=credits'.format(api_key))
+    film_json = response.json()
+    image_path = get_film_image(film_json)
+    film_json['year'] = film_json['release_date'].split('-')[0]
+    # Get director
+    crew = film_json['credits']['crew']
+    film_json['director'] = ''
+    for crew_member in crew:
+        if crew_member['job'] == 'Director':
+            film_json['director'] = crew_member['name']
+    return render_template('film.html', title = film_json.get('original_title', 'ERROR'), film_json = film_json,
+            image_path = image_path)
+
+def get_film_image(film_json):
+    image_root = 'https://image.tmdb.org/t/p/w300/'
+    return image_root + film_json.get('poster_path', '')
+
+
 
 @bp.route('/send_message/<recipient>', methods = ['GET', 'POST'])
 @login_required

@@ -1,1 +1,2 @@
 FLASK_APP=cinefile.py
+FLASK_DEBUG=1

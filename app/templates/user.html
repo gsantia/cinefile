@@ -1,41 +1,177 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <table class="table table-hover">
-        <tr>
-            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
-            <td>
-                <h1>User: {{ user.username }}</h1>
-                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-                {% if user.last_seen %}
-                    <p>Last seen on: {{ moment(user.last_seen).format('LLL') }}</p>
-                {% endif %}
-                <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
-                {% if user == current_user %}
-                    <p><a href="{{ url_for('main.edit_profile') }}">Edit your profile</a></p>
-                    {% if not current_user.get_task_in_progress('export_posts') %}
-                        <p>
-                            <a href="{{ url_for('main.export_reviews') }}">
-                                Export your reviews
-                            </a>
-                        </p>
-                    {% endif %}
-                {% elif not current_user.is_following(user) %}
-                    <p><a href="{{ url_for('main.follow', username = user.username) }}">Follow</a></p>
-                {% else %}
-                    <p><a href="{{ url_for('main.unfollow', username = user.username) }}">Unfollow</a></p>
-                {% endif %}
-                {% if user != current_user %}
-                    <p><a href="{{ url_for('main.send_message', recipient = user.username) }}">
-                            Message
-                        </a>
-                    </p>
-                {% endif %}
-                        
-            </td>
-        </tr>
-    </table>
+    <div class="container d-flex h-100">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6 text-right">
+                        <img clas= "display" src="{{ user.avatar(164) }}" class="rounded-corners float-left">
+                    </div>
+                    <div class="col-sm-6 justify-content-center">
+                        <h5>{{ user.username }}</h5>
+                        {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                        {% if user.last_seen %}
+                            <p>Last seen on: {{ moment(user.last_seen).format('LLL') }}</p>
+                        {% endif %}
+                        {% if user == current_user %}
+                            <p><a href="{{ url_for('main.edit_profile') }}" class="btn btn-primary btn-sm">Edit your profile</a></p>
+                            {#{% if not current_user.get_task_in_progress('export_posts') %}
+                                <p>
+                                    <a href="{{ url_for('main.export_reviews') }}" class="btn btn-primary btn-sm">
+                                        Export your reviews
+                                    </a>
+                                </p>
+                            {% endif %}#}
+                        {% elif not current_user.is_following(user) %}
+                            <p><a href="{{ url_for('main.follow', username = user.username) }}">Follow</a></p>
+                        {% else %}
+                            <p><a href="{{ url_for('main.unfollow', username = user.username) }}">Unfollow</a></p>
+                        {% endif %}
+                        {% if user != current_user %}
+                            <p><a href="{{ url_for('main.send_message', recipient = user.username) }}">
+                                    Message
+                                </a>
+                            </p>
+                        {% endif %}
+                    </div>
+            </div>
+        </div>
+            <div class="col-sm-6 text-center">
+                <div class="row">
+                    <div class="col-sm-3 text-center counter">
+                        <p>Followers: <h4>{{ user.followers.count() }}</h4></p>
+                    </div>
+                    <div class="col-sm-3 text-center counter">
+                        <p>Followed: <h4>{{ user.followed.count() }}</h4></p>
+                    </div>
+                    <div class="col-sm-3 text-center counter">
+                        <p>Films: <h4>0</h4></p>
+                    </div>
+                    <div class="col-sm-3 text-center counter">
+                        <p>Reviews: <h4>0</h4></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <hr>
+    <!-- Favorite films card !-->
+    <div class="container">
+        <div class="card-group">
+            <div class="text-center">
+                <p class="text-center"><h5>FAVORITE FILMS</h5></p>
+            </div>
+            <div class="row">
+                <div class="card col-md-2">
+                    <span class="border">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png">
+                    </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Film 1</h4>
+                    </div>
+                </div>
+                
+                <div class="card col-md-2">
+                    <span class="border border-primary">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190705124953/Left-SP2019.png">
+                    </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Film 2</h4>
+                    </div>
+                </div>
+
+                <div class="card col-md-2">
+                    <span class="border border-primary">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190623192118/Left-Bar-DSA-Self.png">
+                    </span>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Film 3</h4>
+                    </div>
+                </div>
+                <div class="card col-md-2">
+                    <span class="border border-primary">
+                        <img class="card-img-top rounded-corners" src=
+                        "https://images.arrowfilms.com/Images/7a98ce67-d8ca-424c-96b2-d9222356dcee.jpg">
+                    </span>
+                </div>
+                <div class="card col-md-2">
+                    <div class="card-body">
+                        <h4 class="card-title">Film 5</h4>
+                    </div>
+                </div>
+                <div class="card col-md-2">
+                    <div class="card-body">
+                        <h4 class="card-title">Film 6</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorite directors !-->
+    <hr>
+    <div class="container">
+        <div class="card-group">
+            <div class="text-center">
+                <p class="text-center"><h5>FAVORITE DIRECTORS</h5></p>
+            </div>
+            <div class="row ">
+                <div class="card col-md-2">
+                    <span class="border">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png">
+                    </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Director 1</h4>
+                    </div>
+                </div>
+                
+                <div class="card col-md-2">
+                    <span class="border border-primary">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190705124953/Left-SP2019.png">
+                    </span>
+                    <div class="card-body">
+                        <h4 class="card-title">Director 2</h4>
+                    </div>
+                </div>
+
+                <div class="card col-md-2">
+                    <span class="border border-primary">
+                        <img class="card-img-top rounded-corners" src= 
+                        "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190623192118/Left-Bar-DSA-Self.png">
+                    </span>
+
+                    <div class="card-body">
+                        <h4 class="card-title">Director 3</h4>
+                    </div>
+                </div>
+                <div class="card col-md-2">
+                    <div class="card-body">
+                        <h4 class="card-title">Director 4</h4>
+                    </div>
+                </div>
+                <div class="card col-md-2">
+                    <div class="card-body">
+                        <h4 class="card-title">Director 5</h4>
+                    </div>
+                </div>
+                <div class="card col-md-2">
+                    <div class="card-body">
+                        <h4 class="card-title">Director 6</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class='text-center'><h5>RECENT REVIEWS</h5></div>
     {% for review in reviews %}
         {% include '_review.html' %}
     {% endfor %}

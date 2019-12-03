@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+	<div class="container d-flex h-100">
+		<div class="text-center">
+			<h3>{{ film_json.original_title}}</h3>
+			<p>{{ film_json.year }}</p>
+			<p>Directed by: {{ film_json.director}}</p>
+			<p>{{ film_json.tagline }}</p>
+			<p>{{ film_json.overview }}</p>
+		</div>
+	</div>
+	<img src="{{ image_path }}">
+{% endblock %}

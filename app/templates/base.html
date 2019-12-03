@@ -3,6 +3,43 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static', filename = 'background_style.css')}}">
+    <style>
+        img {
+            max-width: 100%;
+            max-height: 50%;
+            /*padding-top: 30px;*/
+            vertical-align: middle;
+        }
+
+
+
+        .card-img-top {
+            width: 100%;
+            height: 12vw;
+            /*object-fit: cover;*/
+            border-radius: 10px;
+        }
+
+        img.rounded-corners {
+            border-radius: 20px;
+        }
+
+        img.mini-rounded {
+            border-radius: 5px;
+        }
+
+        img.displayed {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        div.counter {
+            padding-top: 45px;
+        }
+
+
+    </style>
 {% endblock %}
 
 {% block title %}

@@ -2,7 +2,7 @@
     <tr>
         <td width="70px">
             <a href="{{ url_for('main.user', username = review.author.username) }}">
-                <img src="{{ review.author.avatar(70) }}" />
+                <img class="mini-rounded" src="{{ review.author.avatar(70) }}" />
             </a>
         </td>
         <td>
@@ -13,7 +13,7 @@
                     </a>
                 </span>
             {% endset %}
-            {{ user_link }} said {{ moment(review.timestamp).fromNow() }}:
+            _FILM_ ({{ moment(review.timestamp).fromNow() }}): 5 stars
             <br>
             {{ review.body }}
         </td>
